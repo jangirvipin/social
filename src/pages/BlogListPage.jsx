@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { fetchBlogs } from '../api/blogService.js'
+// Navbar is provided by PublicLayout; don't render it here
 
 export default function BlogListPage() {
   const [blogs, setBlogs] = useState([])
@@ -35,7 +36,8 @@ export default function BlogListPage() {
   const sortedBlogs = useMemo(() => [...blogs].sort((a, b) => new Date(b.created_at) - new Date(a.created_at)), [blogs])
 
   return (
-    <section className="public-grid">
+    <>
+      <section className="public-grid">
       <div className="public-status">
         {status === 'loading' && <span>Loading blogs…</span>}
         {status === 'error' && <span className="status status--error">{error}</span>}
@@ -64,5 +66,6 @@ export default function BlogListPage() {
         </ul>
       )}
     </section>
+    </>
   )
 }

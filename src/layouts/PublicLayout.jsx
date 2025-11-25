@@ -1,8 +1,10 @@
 import { Link, Outlet } from 'react-router-dom'
+import Navbar from '../components/Navbar.jsx'
 
 export default function PublicLayout() {
   return (
     <main className="page page--public">
+      <Navbar />
       <header className="hero">
         <div>
           <p className="eyebrow">Public view</p>
