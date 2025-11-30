@@ -1,66 +1,170 @@
-# Blog API Reference
+Got it — I will remove **SpyFu, ads, “Growth Audit Crew,” and every other name/tool you didn’t ask for.**
+Here is a **clean, neutral, professional prompt** for ANY digital-marketing website.
+No brand name, no SpyFu, no ads tools — **just a generic website template prompt** you can customize later.
 
-### Database details
-- Backend connects to whichever Postgres database is provided via `DATABASE_URL` in the project `.env`.
-- Table schema (auto-created at startup):
-  - `id` (SERIAL PRIMARY KEY)
-  - `title` (`TEXT`, required)
-  - `content` (`TEXT`, required)
-  - `author` (`TEXT`, required)
-  - `created_at` and `updated_at` (`TIMESTAMPTZ`, default `NOW()`)
-- All queries are plain SQL executed through `pg` (see `models/blogModel.js`).
+---
 
-### Environment setup
-- Drop the Neon/Postgres URL into `.env`: `DATABASE_URL=postgresql://...` (Neon example already present).
-- Server will log an error and crash during startup if `DATABASE_URL` is missing.
-- SSL is forced for compatibility with hosted databases (e.g., Neon).
+# ✅ **Clean & Corrected Prompt for AI Website Builder (No SpyFu, No Brand Names)**
 
-## Public endpoints (user-facing, no admin prefix)
-- `GET /blogs`
-  - Returns all blogs ordered by `created_at` descending.
-  - Response shape: `{ data: Blog[] }`.
-- `GET /blogs/:id`
-  - Returns a single blog by ID.
-  - 404 if the blog does not exist.
-  - Response shape: `{ data: Blog }`.
+Copy and paste this into your AI (Framer, Figma AI, Webflow AI, Cursor, v0, Wix ADI, etc.):
 
-### Blog payload example
-```json
-{
-  "id": 5,
-  "title": "How we built the blog",
-  "content": "Details about implementation...",
-  "author": "Jangi",
-  "created_at": "2025-11-24 12:34:56",
-  "updated_at": "2025-11-24 12:34:56"
-}
-```
+---
 
-## Admin endpoints (prefixed with `/admin/blogs`)
-### Create
-- `POST /admin/blogs`
-  - Body: `title`, `content`, `author` (all required).
-  - Returns the created blog record (`201 Created`).
+## **PROMPT START**
 
-### Update
-- `PUT /admin/blogs/:id`
-  - Body can include any of `title`, `content`, `author`.
-  - Returns the updated blog record.
-  - 404 if the blog does not exist, 400 if no body fields are provided.
+You are an expert UI/UX designer and full-stack web developer.
+Create a **complete, modern, premium-quality website** for a **Digital Marketing Agency**.
+Follow all instructions carefully so the output looks professional and high-conversion.
 
-### Delete
-- `DELETE /admin/blogs/:id`
-  - Removes the blog and returns `204 No Content`.
-  - 404 if the blog does not exist.
+---
 
-## Error handling
-- Missing required fields => `400 Bad Request` with an `error` message.
-- Non-existent IDs => `404 Not Found` with `error` message.
-- Unexpected errors => `500 Internal Server Error` with `{ error: 'Internal server error' }`.
+## **🔵 BRAND DETAILS**
 
-## Frontend checklist
-1. Use `GET /blogs` to populate lists, handle empty arrays gracefully.
-2. Link to details via `GET /blogs/:id` and show loading/fallback states for 404.
-3. Admin flows should point to `/admin/blogs` routes and submit JSON payloads.
-4. No authentication is enforced at the moment, so avoid exposing admin URLs in public UI.
-5. Monitor responses for the `error` field in case the server rejects input.
+**Business Name:** *[INSERT YOUR NAME]*
+**Tagline:** *[INSERT TAGLINE]*
+(Leave placeholders that I can fill later.)
+
+**Design Tone:**
+
+* Professional
+* Modern
+* Clean
+* Premium
+* Trustworthy
+
+**Color Palette (generic):**
+
+* Primary: #111111
+* Accent: #3B82F6 (Blue)
+* Secondary: #E5E7EB (Light Gray)
+* Use gradients and soft shadows subtly
+
+**Style:**
+
+* Minimal layout
+* Clean typography
+* High contrast
+* Smooth animations
+* Modern icons and illustrations
+
+---
+
+## **🔵 WEBSITE SHOULD OFFER THESE SERVICES**
+
+1. Search Engine Optimization (SEO)
+2. Social Media Marketing
+3. Performance Marketing (Google, Meta, LinkedIn, etc.)
+4. Content Marketing
+5. Email Marketing Automation
+6. Web Design & Landing Page Optimization
+7. Analytics & Tracking Setup
+8. Brand Strategy & Consultation
+
+---
+
+## **🔵 REQUIRED PAGES**
+
+### **1. Home Page**
+
+* Hero section with bold headline & subheadline
+* Primary CTA: *Contact Us / Get Quote*
+* Highlight main services
+* Why choose us section
+* Testimonials
+* Portfolio/Case Studies preview
+* Final CTA banner
+
+---
+
+### **2. Services Page**
+
+Create **one master services page** + **individual service pages**.
+Each service page needs:
+
+* Hero banner
+* Description
+* What’s included
+* Process
+* Pricing (optional)
+* FAQs
+* Contact CTA
+
+---
+
+### **3. Pricing Page**
+
+* Tiered pricing
+* Comparison table
+* Monthly vs yearly toggle
+* FAQ section
+
+---
+
+### **4. Portfolio / Case Studies Page**
+
+* Grid layout
+* Visual cards
+* Hover animations
+* Individual case study template
+
+---
+
+### **5. About Us Page**
+
+* Story
+* Mission & vision
+* Team
+* Approach / Process
+
+---
+
+### **6. Contact Page**
+
+* Contact form
+* Business info
+* Map (placeholder)
+* Chat widget (placeholder)
+
+---
+
+## **🔵 DESIGN REQUIREMENTS**
+
+### **Typography**
+
+* Headings: Poppins / Inter / Satoshi
+* Body: Inter / DM Sans
+* Clean hierarchy, bold titles
+
+### **UI Elements**
+
+* Sticky navbar
+* Rounded corners
+* Soft shadows
+* Iconography for each service
+* Smooth scroll animations
+* Glassmorphism for cards (optional)
+
+### **Animations**
+
+* Fade-in on scroll
+* Hover effects on cards
+* Micro-interactions on buttons
+* Subtle parallax in hero
+
+---
+
+## **🔵 FUNCTIONALITY REQUIREMENTS**
+
+* Mobile-first responsive design
+* Fast loading
+* SEO-optimized structure
+* CMS-ready structure (for blogs, case studies, services)
+* Reusable components
+* Developer-ready HTML/CSS/React output (depending on platform)
+
+---
+
+## **PROMPT END**
+
+---
+
